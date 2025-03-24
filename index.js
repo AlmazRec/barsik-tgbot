@@ -1,5 +1,5 @@
 const TelegramApi = require("node-telegram-bot-api")
-const token = "6709026630:AAEOp97CdOQ0rxpAJngebb3Gta3DZ2AEss4"
+const token = "your_token"
 const bot = new TelegramApi(token, {polling: true})
 
 let click_count = 0
