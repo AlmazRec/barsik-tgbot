@@ -1,5 +1,5 @@
 const TelegramApi = require("node-telegram-bot-api")
-const token = "670902не дам4"
+const token = "6709026630:AAEOp97CdOQ0rxpAJngebb3Gta3DZ2AEss4"
 const bot = new TelegramApi(token, {polling: true})
 
 let click_count = 0
@@ -56,7 +56,7 @@ bot.on("message", async msg => {
         await bot.sendMessage(chatId, `Meow😺`, menuButtons)
     }
     if(text === "/get_barsik") {
-        add_barsik(chatId)
+        await add_barsik(chatId)
     }
     if(text === "/balance") {
         await bot.sendMessage(chatId, `Ваш баланс: ${click_count}`)
@@ -70,7 +70,7 @@ bot.on('callback_query', async msg => {
     const chatId = msg.message.chat.id
 
     if(data === "get" || data === "earn") {
-        add_barsik(chatId)
+        await add_barsik(chatId)
     }
     if(data === "profile") {
         await bot.sendMessage(chatId, `😺Профиль пользователя: ${msg.from.first_name}😺\n😺Кол-во барсят: ${click_count}\n👆Всего кликов: ${click_sum}`)
